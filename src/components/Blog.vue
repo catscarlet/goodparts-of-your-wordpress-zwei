@@ -4,7 +4,7 @@
     <div class="drawer-list-on-desktop">
         <mu-drawer :open.sync="drawer" :docked="docked" :z-depth="depth">
             <mu-appbar style="width: 100%;" title="Select a title" color="#bccc9" text-color="#030f1f"></mu-appbar>
-            <mu-list textline="three-line">
+            <mu-list textline="three-line" v-loading="loading_list">
                 <mu-list-item avatar button @click="show(item.ID)" v-for="(item, index) in list" :key="index">
                     <mu-list-item-content>
                         <mu-list-item-sub-title class="title-in-list">
@@ -20,7 +20,7 @@
 
     </div>
 
-    <div class="blog-body" v-bind:class="{'drawer-push': !is_mobile}">
+    <div class="blog-body" v-bind:class="{'drawer-push': !is_mobile}"  v-loading="loading_content">
         <div class="site-title">
             <mu-appbar color="#395c7d">
 
@@ -97,6 +97,9 @@ export default {
             endX: null,
             endY: null,
 
+            loading_list: true,
+            loading_content: false,
+
             debug_info: '',
         };
     },
@@ -121,6 +124,7 @@ export default {
             this.$axios.get(this.api + 'readlist.php')
                 .then(function(response) {
                     self.list = response.data;
+                    self.loading_list = false;
                 })
                 .catch(function(error) {
                     self.list = [{
@@ -129,6 +133,7 @@ export default {
                         'post_title': 'GetList Failed',
                         'permalink': '',
                     },];
+                    self.loading_list = false;
                 });
         },
         showDrawer: function() {
@@ -144,11 +149,17 @@ export default {
             }
 
             var self = this;
+            self.loading_content = true;
             this.$axios.get(this.api + '/get_content.php?id=' + id)
                 .then(function(response) {
                     self.draw(id, response.data.content);
                 })
-                .catch(function(error) {});
+                .catch(function(error) {
+                    self.content.title = 'Get Content Failed.';
+                    self.content.content = '';
+                    self.content.link = '';
+                    self.loading_content = false;
+                });
         },
         draw: function(id, content) {
             function maxwidth(contentp) {
@@ -181,12 +192,14 @@ export default {
 
             var contentp;
             var self = this;
+
             this.list.forEach(function(v, i) {
                 if (v.ID == id) {
                     self.content.title = v.post_title;
                     self.content.link = v.permalink;
                 }
             });
+
             contentp = this.$autop(content);
             contentp = maxwidth(contentp);
             contentp = nocaption(contentp);
@@ -195,6 +208,7 @@ export default {
             window.scrollTo(0, 0);
 
             this.content.content = contentp;
+            self.loading_content = false;
         },
         openNewWindow: function(url) {
             var win = window.open(url, '_blank');

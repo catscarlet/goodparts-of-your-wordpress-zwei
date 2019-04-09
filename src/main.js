@@ -6,6 +6,11 @@ import axios from 'axios';
 import autop from 'wordpress-autop';
 
 Vue.use(MuseUI);
+
+import 'muse-ui-loading/dist/muse-ui-loading.css';
+import Loading from 'muse-ui-loading';
+Vue.use(Loading);
+
 Vue.prototype.$axios = axios;
 Vue.prototype.$autop = autop;
 Vue.prototype.$siteconf = {
