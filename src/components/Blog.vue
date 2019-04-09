@@ -3,7 +3,7 @@
 
     <div class="drawer-list-on-desktop">
         <mu-drawer :open.sync="drawer" :docked="docked" :z-depth="depth">
-            <mu-appbar style="width: 100%;" title="Select a title"></mu-appbar>
+            <mu-appbar style="width: 100%;" title="Select a title" color="#bccc9" text-color="#030f1f"></mu-appbar>
             <mu-list textline="three-line">
                 <mu-list-item avatar button @click="show(item.ID)" v-for="(item, index) in list" :key="index">
                     <mu-list-item-content>
@@ -22,7 +22,7 @@
 
     <div class="blog-body" v-bind:class="{'drawer-push': !is_mobile}">
         <div class="site-title">
-            <mu-appbar color="primary">
+            <mu-appbar color="#395c7d">
 
                 <mu-button icon slot="left" @click="showDrawer" v-show="is_mobile">
                     <mu-icon value="menu"></mu-icon>
@@ -63,7 +63,6 @@
             <div v-else v-html="description_mobile"></div>
         </div>
     </div>
-
 
 </div>
 </template>
@@ -251,10 +250,10 @@ export default {
 
 <style scoped>
 body {
-    background-color: rgba(227, 227, 227, 0.5);
 }
 
-.blog-body {}
+.blog-body {
+}
 
 .drawer-push {
     padding-left: 256px;
@@ -309,5 +308,6 @@ body {
     text-align: center;
     padding-top: 60vh;
     padding-bottom: 40px;
+    font-size: large;
 }
 </style>
