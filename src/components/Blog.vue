@@ -20,7 +20,7 @@
 
     </div>
 
-    <div class="blog-body" v-bind:class="{'drawer-push': !is_mobile}"  v-loading="loading_content">
+    <div class="blog-body" v-bind:class="{'drawer-push': !is_mobile}" v-loading="loading_content">
         <div class="site-title">
             <mu-appbar color="#395c7d">
 
@@ -112,9 +112,6 @@ export default {
             this.is_mobile = isMobile();
         };
         window.addEventListener('resize', this.handleResize);
-        window.addEventListener('touchmove', function(e) {
-            e.preventDefault();
-        }, false);
         window.addEventListener('touchstart', this.touchStart);
         window.addEventListener('touchmove', this.touchAndMove);
     },
