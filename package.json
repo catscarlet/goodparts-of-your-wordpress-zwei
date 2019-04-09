@@ -12,6 +12,7 @@
     "muse-ui": "^3.0.2",
     "muse-ui-loading": "^0.2.0",
     "vue": "^2.6.6",
+    "vue-lazyload": "^1.2.6",
     "wordpress-autop": "^1.0.2"
   },
   "devDependencies": {
