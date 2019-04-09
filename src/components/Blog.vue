@@ -48,7 +48,7 @@
                 <span class="post-title">{{ content.title }}</span>
             </div>
 
-            <div id="real-content" v-if="content.title" class="real-content" v-html="content.content"></div>
+            <div id="real-content" v-if="content.title" class="real-content" v-html="content.content" v-lazy-container="{ selector: 'img', error: 'http://192.168.1.101/icons/folder.gif', loading: 'http://192.168.1.101/icons/unknown.gif' }"></div>
 
             <div v-if="content.link" class="title-zone">
                 <hr>
@@ -178,6 +178,15 @@ export default {
                 return contentp;
             }
 
+            function letslazyload(contentp) {
+                var regexp1 = new RegExp(/(\<img )([^>]*)(src=")([^"]*")([^>]*)(\>)/, 'g');
+
+                contentp = contentp.replace(regexp1, function(match, p1, p2, p3, p4, p5, p6) {
+                    return p1 + p2 + 'data-src="' + p4 + p5 + p6;
+                });
+                return contentp;
+            }
+
             function preCode(contentp) {
                 var regexp1 = new RegExp(/(\<pre[^>]*)(\>)/, 'g');
 
@@ -200,6 +209,7 @@ export default {
             contentp = this.$autop(content);
             contentp = maxwidth(contentp);
             contentp = nocaption(contentp);
+            contentp = letslazyload(contentp);
             contentp = preCode(contentp);
 
             window.scrollTo(0, 0);

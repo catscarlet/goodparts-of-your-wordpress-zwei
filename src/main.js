@@ -11,8 +11,17 @@ import 'muse-ui-loading/dist/muse-ui-loading.css';
 import Loading from 'muse-ui-loading';
 Vue.use(Loading);
 
+import VueLazyload from 'vue-lazyload';
+Vue.use(VueLazyload, {
+    preLoad: 1.3,
+    error: require('../public/dead-ripple.svg'),
+    loading: require('../public/loading-ripple.svg'),
+    attempt: 1,
+});
+
 Vue.prototype.$axios = axios;
 Vue.prototype.$autop = autop;
+
 Vue.prototype.$siteconf = {
     title: 'The Good Parts of WordPress',
     description: '<span>The Good Parts of Your WordPress</span><br><span>← Click the item in the menu ←</span>',
