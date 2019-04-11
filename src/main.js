@@ -14,8 +14,8 @@ Vue.use(Loading);
 import VueLazyload from 'vue-lazyload';
 Vue.use(VueLazyload, {
     preLoad: 1.3,
-    error: require('../public/dead-ripple.svg'),
-    loading: require('../public/loading-ripple.svg'),
+    error: require('./assets/dead-ripple.svg'),
+    loading: require('./assets/loading-ripple.svg'),
     attempt: 1,
 });
 
