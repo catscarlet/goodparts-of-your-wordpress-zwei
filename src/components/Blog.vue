@@ -59,8 +59,7 @@
         </div>
 
         <div v-else class="blank">
-            <div v-if="!is_mobile" v-html="description"></div>
-            <div v-else v-html="description_mobile"></div>
+            <welcome />
         </div>
     </div>
 
@@ -71,14 +70,16 @@
 import {
     isMobile
 } from '../common/';
+import welcome from './Welcome.vue';
 
 export default {
+    components: {
+        welcome,
+    },
     data() {
         return {
             title: this.$siteconf.title,
             api: this.$siteconf.api,
-            description: this.$siteconf.description,
-            description_mobile: this.$siteconf.description_mobile,
 
             docked: true,
             drawer: false,
@@ -327,7 +328,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-    padding-top: 60vh;
+    padding-top: 45vh;
     padding-bottom: 40px;
     font-size: large;
 }

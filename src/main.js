@@ -24,8 +24,6 @@ Vue.prototype.$autop = autop;
 
 Vue.prototype.$siteconf = {
     title: 'The Good Parts of WordPress',
-    description: '<span>The Good Parts of Your WordPress</span><br><span>← Click the item in the menu ←</span>',
-    description_mobile: '<span>The Good Parts of Your WordPress</span><br><span>→ Slide →</span>',
     api: './api/',
 };
 
