@@ -118,7 +118,7 @@ export default {
     },
     methods: {
         getlist: function(id, event) {
-            var self = this;
+            let self = this;
             this.$axios.get(this.api + 'readlist.php')
                 .then(function(response) {
                     self.list = response.data;
@@ -146,7 +146,7 @@ export default {
                 this.drawer = false;
             }
 
-            var self = this;
+            let self = this;
             self.loading_content = true;
             this.$axios.get(this.api + '/get_content.php?id=' + id)
                 .then(function(response) {
@@ -161,7 +161,7 @@ export default {
         },
         draw: function(id, content) {
             function maxwidth(contentp) {
-                var regexp1 = new RegExp(/(\<img[^>]*)(\>)/, 'g');
+                let regexp1 = new RegExp(/(\<img[^>]*)(\>)/, 'g');
                 contentp = contentp.replace(regexp1, function(match, p1, p2) {
                     return p1 + 'style="max-width: 100%; height: auto;"' + p2;
                 });
@@ -169,8 +169,8 @@ export default {
             }
 
             function nocaption(contentp) {
-                var regexp1 = new RegExp(/\[caption .*\"\]/, 'g');
-                var regexp2 = new RegExp(/(\<img.*\>)(.*)\[\/caption\]/, 'g');
+                let regexp1 = new RegExp(/\[caption .*\"\]/, 'g');
+                let regexp2 = new RegExp(/(\<img.*\>)(.*)\[\/caption\]/, 'g');
 
                 contentp = contentp.replace(regexp1, '<br>');
                 contentp = contentp.replace(regexp2, function(match, p1, p2) {
@@ -180,7 +180,7 @@ export default {
             }
 
             function letslazyload(contentp) {
-                var regexp1 = new RegExp(/(\<img )([^>]*)(src=")([^"]*")([^>]*)(\>)/, 'g');
+                let regexp1 = new RegExp(/(\<img )([^>]*)(src=")([^"]*")([^>]*)(\>)/, 'g');
 
                 contentp = contentp.replace(regexp1, function(match, p1, p2, p3, p4, p5, p6) {
                     return p1 + p2 + 'data-src="' + p4 + p5 + p6;
@@ -189,7 +189,7 @@ export default {
             }
 
             function preCode(contentp) {
-                var regexp1 = new RegExp(/(\<pre[^>]*)(\>)/, 'g');
+                let regexp1 = new RegExp(/(\<pre[^>]*)(\>)/, 'g');
 
                 contentp = contentp.replace(regexp1, function(match, p1, p2) {
                     return p1 + 'style="overflow: auto; background-color: #f6f8fa; padding: 16px; line-height: 1.45; border-radius: 3px; font-size: 85%;"' + p2;
@@ -197,8 +197,8 @@ export default {
                 return contentp;
             }
 
-            var contentp;
-            var self = this;
+            let contentp;
+            let self = this;
 
             this.list.forEach(function(v, i) {
                 if (v.ID == id) {
@@ -219,7 +219,7 @@ export default {
             self.loading_content = false;
         },
         openNewWindow: function(url) {
-            var win = window.open(url, '_blank');
+            let win = window.open(url, '_blank');
             if (win) {
                 //Browser has allowed it to be opened
                 win.focus();
