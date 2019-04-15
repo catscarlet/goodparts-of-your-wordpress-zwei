@@ -11,19 +11,19 @@
         <br>
         <div class="wrapper">
             <span class="slide with-icon">
-                <mu-icon value="keyboard_arrow_right" color="#395c7d"></mu-icon>
-                <mu-icon value="keyboard_arrow_right" color="#395c7d"></mu-icon>
-                <mu-icon value="keyboard_arrow_right" color="#395c7d"></mu-icon>
-                <mu-icon value="keyboard_arrow_right" color="#395c7d"></mu-icon>
-                <mu-icon value="keyboard_arrow_right" color="#395c7d"></mu-icon>
-                <mu-icon value="keyboard_arrow_right" color="#395c7d"></mu-icon>
-                <mu-icon value="keyboard_arrow_right" color="#395c7d"></mu-icon>
-                <mu-icon value="keyboard_arrow_right" color="#395c7d"></mu-icon>
+                <span class="slide-icon"></span>
+                <span class="slide-icon"></span>
+                <span class="slide-icon"></span>
+                <span class="slide-icon"></span>
+                <span class="slide-icon"></span>
+                <span class="slide-icon"></span>
+                <span class="slide-icon"></span>
+                <span class="slide-icon"></span>
             </span>
         </div>
 
         <span class="with-icon">
-            <mu-icon value="keyboard_arrow_right" color="#395c7d"></mu-icon> → Slide → <mu-icon value="keyboard_arrow_right" color="#395c7d"></mu-icon>
+            <span class="slide-icon"></span> Slide <span class="slide-icon"></span>
         </span>
 
         <span class="with-icon"> Or touch the <mu-icon value="menu" color="#395c7d"></mu-icon> on the top left</span>
@@ -97,5 +97,21 @@ export default {
 .with-icon {
     display: flex;
     justify-content: center;
+}
+
+.slide-icon::before {
+    content: '>';
+}
+
+.slide-icon {
+    height: 24px;
+    width: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    color: #395c7d;
+    font-size: 24px;
+    line-height: 1;
 }
 </style>
