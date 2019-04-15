@@ -10,7 +10,7 @@
 
 这是实现这个场景功能的第二个项目了，这个项目较前一个项目，增加了一些特性，比如移动端的展示，以及 Lazyload 。
 
-上一个项目：[goodparts-of-your-wordpress<Archived>](https://github.com/catscarlet/goodparts-of-your-wordpress)
+上一个项目：[goodparts-of-your-wordpress (Archived)](https://github.com/catscarlet/goodparts-of-your-wordpress)
 
 ## Demo
 
@@ -46,7 +46,9 @@
 
 ### 编译准备
 
-- Node
+修改 `public/index.html` 中的 title。
+
+修改 `components/Welcome.vue` 组件。你可以完全自定义你的 Welcome 界面。
 
 ### Serve & build
 
@@ -57,7 +59,7 @@ yarn.lock, so
 
 ## 已知问题
 
-- 不支持任何一个版本的 IE，且没有任何提示。
+- 不支持任何一个版本的 IE 。尝试使用 IE 进行访问会弹窗提示。
 - 部分 iOS 11 用户无法正常访问。我没有任何 iOS 设备或 Mac 设备。如果你有任何相关的信息，请提交至 Issue。
 - API 跨域请求部分代码未完成。
 

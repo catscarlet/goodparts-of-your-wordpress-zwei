@@ -12,7 +12,7 @@ The purpose of the project is for showing specified posts of your WordPress in s
 
 This is the second project of this case. Compared with the previous, this new project includes some new features, like Responsive web design and Lazyload.
 
-Last project: [goodparts-of-your-wordpress<Archived>](https://github.com/catscarlet/goodparts-of-your-wordpress)
+Last project: [goodparts-of-your-wordpress (Archived)](https://github.com/catscarlet/goodparts-of-your-wordpress)
 
 ## Demo
 
@@ -46,9 +46,11 @@ Then run(use cli, or browser) `generate_list.php` to generate a json list. Copy 
 
 You can rename or remove the `generate_list.php` in case of security now.
 
-### Build Requirements
+### Prepare Build
 
-- Node
+Change the title in `public/index.html`.
+
+Edit `components/Welcome.vue`. Feel free to custom your Welcome.
 
 ### Serve & build
 
@@ -59,7 +61,7 @@ yarn.lock, so
 
 ## Known Issues
 
-- Doesn't support any version of IE, and there is not a notice.
+- Doesn't support any version of IE. Any versions of IE will got an Alert.
 - Some says iOS 11 have trouble. I don't have any iOS devices, nor any Mac devices. If anyone has trouble about it, please report it on the Issue.
 - API CORS code not finished.
 
