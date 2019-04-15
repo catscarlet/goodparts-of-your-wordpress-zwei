@@ -48,7 +48,7 @@
                 <span class="post-title">{{ content.title }}</span>
             </div>
 
-            <div id="real-content" v-if="content.title" class="real-content" v-html="content.content" v-lazy-container="{ selector: 'img', error: 'http://192.168.1.101/icons/folder.gif', loading: 'http://192.168.1.101/icons/unknown.gif' }"></div>
+            <div id="real-content" v-if="content.title" class="real-content" v-html="content.content" v-lazy-container="{ selector: 'img' }"></div>
 
             <div v-if="content.link" class="title-zone">
                 <hr>
@@ -148,16 +148,18 @@ export default {
 
             let self = this;
             self.loading_content = true;
+            self.content.title = 'Loading...';
+            self.content.content = '';
+            self.content.link = '';
             this.$axios.get(this.api + '/get_content.php?id=' + id)
                 .then(function(response) {
                     self.draw(id, response.data.content);
                 })
                 .catch(function(error) {
                     self.content.title = 'Get Content Failed.';
-                    self.content.content = '';
-                    self.content.link = '';
                     self.loading_content = false;
-                });
+                }
+            );
         },
         draw: function(id, content) {
             function maxwidth(contentp) {
