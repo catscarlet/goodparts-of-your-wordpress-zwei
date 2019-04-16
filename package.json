@@ -1,35 +1,35 @@
 {
-  "name": "hello-world",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
-  },
-  "dependencies": {
-    "axios": "^0.18.0",
-    "core-js": "^2.6.5",
-    "muse-ui": "^3.0.2",
-    "muse-ui-loading": "^0.2.0",
-    "vue": "^2.6.6",
-    "vue-lazyload": "^1.2.6",
-    "wordpress-autop": "^1.0.2"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.5.0",
-    "@vue/cli-service": "^3.5.0",
-    "vue-template-compiler": "^2.5.21"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "ios_saf >= 6",
-    "Chrome >= 54",
-    "not ie <= 10"
-  ]
+    "name": "goodparts-of-your-wordpress-zwe",
+    "version": "0.2.0",
+    "license": "MIT",
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build"
+    },
+    "dependencies": {
+        "axios": "^0.18.0",
+        "core-js": "^2.6.5",
+        "muse-ui": "^3.0.2",
+        "muse-ui-loading": "^0.2.0",
+        "vue": "^2.6.6",
+        "vue-lazyload": "^1.2.6",
+        "wordpress-autop": "^1.0.2"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "^3.5.0",
+        "@vue/cli-service": "^3.5.0",
+        "vue-template-compiler": "^2.5.21"
+    },
+    "postcss": {
+        "plugins": {
+            "autoprefixer": {}
+        }
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "ios_saf >= 6",
+        "Chrome >= 54",
+        "not ie <= 10"
+    ]
 }
