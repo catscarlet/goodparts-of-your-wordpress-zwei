@@ -2,6 +2,15 @@
 
 From new to old.
 
+## 0.3.0
+
+- Add yarn serve https support in vue.config.js (Disabled by default.)
+- Add robots.txt to prevent indexing
+- Upgrade webpack-bundle-analyzer which was vulnerable to XSS.
+- Make site title bar a little transparent to avoid the issue of 'header overlaps in-page anchors'
+- Change <a> color from muse-ui's default pink to blue for color-blind.
+- Minor code style change.
+
 ## 0.2.0
 
 - Add Welcome.vue. Feel free to custom your Welcome now.

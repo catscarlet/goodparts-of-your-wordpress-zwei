@@ -1,6 +1,6 @@
 {
     "name": "goodparts-of-your-wordpress-zwe",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "license": "MIT",
     "scripts": {
         "serve": "vue-cli-service serve",
