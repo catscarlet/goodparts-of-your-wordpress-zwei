@@ -4,8 +4,22 @@ import 'muse-ui/dist/muse-ui.css';
 import './font.css';
 import axios from 'axios';
 import autop from 'wordpress-autop';
+import theme from 'muse-ui/lib/theme';
 
 Vue.use(MuseUI);
+
+theme.addCreateTheme((theme) => {
+    return `
+        body {
+            background-color: #bcccc9;
+        }
+        a {
+            color: #395c7d;
+        }
+    `;
+});
+
+theme.use('light');
 
 import 'muse-ui-loading/dist/muse-ui-loading.css';
 import Loading from 'muse-ui-loading';

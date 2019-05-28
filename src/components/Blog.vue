@@ -273,12 +273,6 @@ export default {
 </script>
 
 <style scoped>
-body {
-}
-
-.blog-body {
-}
-
 .drawer-push {
     padding-left: 256px;
 }
