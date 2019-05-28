@@ -281,6 +281,7 @@ export default {
     position: fixed;
     width: 100%;
     height: 56px;
+    opacity: 0.85;
 }
 
 .title-zone {
