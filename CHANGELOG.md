@@ -2,6 +2,10 @@
 
 From new to old.
 
+## 0.3.1
+
+- Update axios and others to for CVE-2019-10742
+
 ## 0.3.0
 
 - Add yarn serve https support in vue.config.js (Disabled by default.)
