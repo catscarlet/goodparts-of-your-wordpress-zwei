@@ -273,12 +273,6 @@ export default {
 </script>
 
 <style scoped>
-body {
-}
-
-.blog-body {
-}
-
 .drawer-push {
     padding-left: 256px;
 }
@@ -287,6 +281,7 @@ body {
     position: fixed;
     width: 100%;
     height: 56px;
+    opacity: 0.85;
 }
 
 .title-zone {
