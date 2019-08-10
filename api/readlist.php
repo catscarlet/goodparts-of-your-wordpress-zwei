@@ -1,11 +1,11 @@
 <?php
 
+include_once 'config.php';
+
 header('Content-Type: text/json');
 //header('Access-Control-Allow-Origin:*');
 //header('Access-Control-Allow-Methods:GET,OPTIONS');
 //header('Access-Control-Allow-Headers:x-requested-with,content-type');
-
-include_once 'config.php';
 
 if (isset($allowed_referers)) {
     if (!array_key_exists('HTTP_REFERER', $_SERVER) || !in_array(parse_url($_SERVER['HTTP_REFERER'])['host'], $allowed_referers)) {

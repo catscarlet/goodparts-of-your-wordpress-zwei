@@ -1,9 +1,15 @@
 <?php
 
-$allowed_referers = ['articles.catscarlet.com', '192.168.1.101'];
-$mysqli = new mysqli('127.0.0.1', 'YOUR_WP_DATABASE_ACCOUNT', 'YOUR_WP_DATABASE_ACCOUNT_PASSWORD', 'YOUR_WP_DATABASE', 'YOUR_WP_DATABASE_PORT');
-$mysqli->set_charset('utf8mb4');
+mysqli_report(MYSQLI_REPORT_STRICT);
 
-if ($mysqli->connect_errno) {
-    echo 'Failed to connect to MySQL: ('.$mysqli->connect_errno.') '.$mysqli->connect_error;
+$allowed_referers = ['articles.catscarlet.com', '192.168.1.101'];
+
+try {
+    $mysqli = new mysqli('127.0.0.1', 'YOUR_WP_DATABASE_ACCOUNT', 'YOUR_WP_DATABASE_ACCOUNT_PASSWORD', 'YOUR_WP_DATABASE', 'YOUR_WP_DATABASE_PORT');
+    $mysqli->set_charset('utf8mb4');
+} catch (Exception $e) {
+    http_response_code(500);
+    echo 'Service unavailable';
+    echo $e->message;
+    exit;
 }

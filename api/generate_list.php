@@ -1,7 +1,5 @@
 <?php
 
-header('Content-Type: text/json');
-
 include_once 'config.php';
 
 $permalink_switch = false;
@@ -28,6 +26,8 @@ while ($row = $result->fetch_assoc()) {
 
 $result->free();
 rsort($list);
+
+header('Content-Type: text/json');
 
 //$rst = json_encode($list, JSON_UNESCAPED_UNICODE + JSON_UNESCAPED_SLASHES /*+ JSON_PRETTY_PRINT*/);
 //echo $rst;
