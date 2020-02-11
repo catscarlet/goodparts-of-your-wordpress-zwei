@@ -9,7 +9,7 @@ try {
     $mysqli->set_charset('utf8mb4');
 } catch (Exception $e) {
     http_response_code(500);
-    echo 'Service unavailable';
-    echo $e->message;
+    //echo 'Service unavailable';
+    echo $e->getMessage();
     exit;
 }
