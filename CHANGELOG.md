@@ -2,6 +2,10 @@
 
 From new to old.
 
+## 0.3.2
+
+- Update serialize-javascript and others to for CVE-2019-16769
+
 ## 0.3.1
 
 - Update axios and others to for CVE-2019-10742
