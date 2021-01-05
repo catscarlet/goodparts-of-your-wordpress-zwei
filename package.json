@@ -7,7 +7,7 @@
         "build": "vue-cli-service build"
     },
     "dependencies": {
-        "axios": "^0.20.0",
+        "axios": "^0.21.1",
         "muse-ui": "^3.0.2",
         "muse-ui-loading": "^0.2.0",
         "vue": "^2.6.12",
