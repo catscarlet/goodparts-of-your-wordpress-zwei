@@ -321,6 +321,21 @@ export default {
     word-wrap: break-word;
 }
 
+.real-content >>> .aligncenter {
+    display: block;
+    margin: 0.375em auto;
+}
+
+.real-content >>> .alignleft {
+    float: left;
+    margin: 0.375em 1.75em 1.75em 0;
+}
+
+.real-content >>> .alignright {
+    float: right;
+    margin: 0.375em 0 1.75em 1.75em;
+}
+
 .blank {
     max-width: 800px;
     margin: 0 auto;
