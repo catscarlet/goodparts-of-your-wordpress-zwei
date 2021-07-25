@@ -57,6 +57,12 @@ yarn.lock, so
 - yarn run serve
 - yarn run build
 
+#### Serve over HTTPS
+
+版本 0.3.0 之后，配置文件 `vue.config.js` 有一个新配置项，可以使 Serve over HTTPS。此功能默认关闭。你可以启用他并用于测试只有 HTTPS 环境下才能启用的功能，比如 **"fake fullscreen"**
+
+项目中包含一组 **localhost** 证书，包括 cert, key, CA, CA-key。这些文件是使用 [FiloSottile/mkcert](https://github.com/FiloSottile/mkcert) 生成的。你应该自己生成并使用自己的证书。
+
 ## 已知问题
 
 - 不支持任何一个版本的 IE 。尝试使用 IE 进行访问会弹窗提示。
