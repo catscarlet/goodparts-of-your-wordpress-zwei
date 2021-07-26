@@ -2,6 +2,11 @@
 
 From new to old.
 
+## 0.4.0
+
+- Fix aligncenter, alignleft, alignright don't work bug.
+- Upgrade dependencies.
+
 ## 0.3.2
 
 - Update serialize-javascript and others to for CVE-2019-16769
