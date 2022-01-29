@@ -2,7 +2,7 @@
 
 mysqli_report(MYSQLI_REPORT_STRICT);
 
-$allowed_referers = ['articles.catscarlet.com', '192.168.1.101'];
+$allowed_referers = ['localhost', '127.0.0.1'];
 
 try {
     $mysqli = new mysqli('127.0.0.1', 'YOUR_WP_DATABASE_ACCOUNT', 'YOUR_WP_DATABASE_ACCOUNT_PASSWORD', 'YOUR_WP_DATABASE', 'YOUR_WP_DATABASE_PORT');
