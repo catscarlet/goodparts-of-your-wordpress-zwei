@@ -2,11 +2,19 @@
 
 include_once 'config.php';
 
-$permalink_switch = false;
+$permalink_switch = false;  //Set to `true` only if you know how to generate your posts' permalink, or else leave this to `false`.
+
+$link_perfix = 'YOUR_WP_LINK_PERFIX';
+$permalink_pattern = 'YOUR_WP_LINK_PERMALINK_PATTERN';
+$link_postfix = 'YOUR_WP_LINK_POSTFIX';
+
+/*
+// This is a example about how to generate my own blog's posts' permalink. (Part 1)
 
 $link_perfix = 'https://blog.catscarlet.com/';
 $permalink_pattern = '#(\d\d\d\d)-(\d\d)-(\d\d)#';
 $link_postfix = '.html';
+*/
 
 $query = "SELECT ID, post_date, post_title FROM `wp_posts` WHERE post_status = 'publish' and post_title <> ''";
 $result = $mysqli->query($query);
@@ -14,6 +22,7 @@ $list = array();
 
 while ($row = $result->fetch_assoc()) {
     if ($permalink_switch) {
+        // This is a example about how to generate my own blog's posts' permalink. (Part 2)
         preg_match($permalink_pattern, $row['post_date'], $matches);
         $permalink = $matches[1].$matches[2].$matches[3].$row['ID'];
         $row['permalink'] = $link_perfix.$permalink.$link_postfix;
