@@ -68,7 +68,7 @@ The project includes a **localhost** cert-pack, includes cert, key, CA, CA-key, 
 ## Known Issues
 
 - Doesn't support any version of IE. Any versions of IE will got an Alert.
-- Some says iOS 11 have trouble. I don't have any iOS devices, nor any Mac devices. If anyone has trouble about it, please report it on the Issue.
+- Some says iOS users have trouble with visiting. I don't have any iOS devices, nor any Mac devices. If anyone has trouble about it, please report it on the Issue.
 - API CORS code not finished.
 - If there are anchors links in the post, when click and jump, the Fixed page header overlaps in-page anchors. No idea how to fix this now. Use opacity to reduce this issue for this moment.
 
