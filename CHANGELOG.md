@@ -2,6 +2,11 @@
 
 From new to old.
 
+## 0.4.1
+
+- Better comments and examples.
+- Upgrade dependencies to fix potential security vulnerabilities.
+
 ## 0.4.0
 
 - Fix aligncenter, alignleft, alignright don't work bug.
