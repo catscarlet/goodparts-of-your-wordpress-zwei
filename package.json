@@ -7,7 +7,7 @@
     "not ie <= 10"
   ],
   "dependencies": {
-    "axios": "^1.12.0",
+    "axios": "^1.13.5",
     "muse-ui": "^3.0.2",
     "muse-ui-loading": "^0.2.0",
     "vue": "^3.0.0",
